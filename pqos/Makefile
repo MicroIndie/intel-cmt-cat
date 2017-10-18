@@ -36,8 +36,8 @@
 ###############################################################################
 
 LIBDIR ?= ../lib
-LDFLAGS = -L$(LIBDIR) -fPIE -z noexecstack -z relro -z now -Wl,-Bstatic
-LDLIBS = -lpqos -lpthread
+LDFLAGS = -L$(LIBDIR) -static-libgcc -fPIE -z noexecstack -z relro -z now -static-libgcc
+LDLIBS = -lpqos -Wl,-Bstatic -lpthread
 CFLAGS = -I$(LIBDIR) \
 	-W -Wall -Wextra -Wstrict-prototypes -Wmissing-prototypes \
 	-Wmissing-declarations -Wold-style-definition -Wpointer-arith \

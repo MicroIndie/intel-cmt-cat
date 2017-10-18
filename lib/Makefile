@@ -38,8 +38,8 @@ LIB = libpqos
 VERSION = 1.1.0
 SO_VERSION = 1
 SHARED ?= y
-LDFLAGS = -L. -lpthread -fPIE -z noexecstack -z relro -z now -Wl,-Bstatic
-CFLAGS = -pthread -I./ -D_GNU_SOURCE \
+LDFLAGS = -L. -lpthread -fPIE -z noexecstack -z relro -z now -static-libgcc
+CFLAGS = -Wl,-Bstatic -pthread -I./ -D_GNU_SOURCE \
 	-W -Wall -Wextra -Wstrict-prototypes -Wmissing-prototypes \
 	-Wmissing-declarations -Wold-style-definition -Wpointer-arith \
 	-Wcast-qual -Wundef -Wwrite-strings \
